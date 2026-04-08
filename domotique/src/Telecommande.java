@@ -1,24 +1,28 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Telecommande {
+    private ArrayList<Appareil> appareils;
+
     public Telecommande() {
-        throw new Error ( " code non ecrit " );
+        this.appareils = new ArrayList<>();
     }
 
     public void ajouterAppareil(Appareil ap) {
-        throw new Error ( " code non ecrit " );
+        this.appareils.add(ap);
     }
 
     public void activerAppareil(int i) {
-        throw new Error ( " code non ecrit " );
+        this.appareils.get(i).allumer();
     }
 
     public void desactiverAppareil(int i) {
-        throw new Error ( " code non ecrit " );
+        this.appareils.get(i).eteindre();
     }
 
     public void activerTout(){
-        throw new Error ( " code non ecrit " );
+        for(Appareil i : appareils)
+            i.allumer();
     }
 
 }
