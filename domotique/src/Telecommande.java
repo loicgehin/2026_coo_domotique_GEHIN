@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Telecommande {
     private ArrayList<Appareil> appareils;
