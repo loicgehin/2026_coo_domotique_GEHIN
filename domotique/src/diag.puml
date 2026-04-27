@@ -1,0 +1,59 @@
+@startuml
+title td6
+
+class Telecommande{
+    +Telecommande()
+    +ajouterAppareil(l:Appareil)
+    +activerAppareil(i:int)
+    +activerTout()
+    +toString():String
+    +getAppareil():Appareil
+}
+
+interface Appareil{
+    +allumer()
+    +eteindre()
+    +toString():String
+    +isAllume():boolean
+}
+
+class Lampe{
+    -allume:boolean
+    +Lampe()
+    +allumer()
+    +eteindre()
+    +toString():String
+    +isAllume():boolean
+}
+class Hifi {
+    -allume:boolean
+    +Lampe()
+    +allumer()
+    +eteindre()
+    +toString():String
+    +isAllume():boolean
+}
+
+class Cheminee{
+    -intensite:intensite
+    +Cheminee()
+    +changerIntensite(i:int)
+    +getLumiere():int
+    +toString():String
+}
+
+class ChemineeAdapter {
+    +ChemineeAdapter(c:Cheminee)
+    +allumer()
+    +eteindre()
+    +toString():String
+    +isAllume():boolean
+}
+
+' Relation
+Telecommande "1" -> "*" Appareil:appareils
+Appareil <|.. Lampe
+Appareil <|.. Hifi
+Appareil <|.. ChemineeAdapter
+ChemineeAdapter "1" -> "1" Cheminee: cheminee
+@enduml
