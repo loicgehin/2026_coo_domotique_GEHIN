@@ -4,7 +4,7 @@ import java.util.Scanner;
  * classe qui cree des lampes et une telecommande associee.
  */
 
-public class Main {
+public class Main1 {
 
 	public static void main(String args[]) {
 		// la telecommande vide
