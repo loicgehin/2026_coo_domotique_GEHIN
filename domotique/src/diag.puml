@@ -55,5 +55,5 @@ Telecommande "1" -> "*" Appareil:appareils
 Appareil <|.. Lampe
 Appareil <|.. Hifi
 Appareil <|.. ChemineeAdapter
-ChemineeAdapter "1" -> "1" Cheminee: cheminee
+ChemineeAdapter "1" -> "1" Cheminee : cheminee
 @enduml
