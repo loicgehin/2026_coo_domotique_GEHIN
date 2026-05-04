@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * classe de test permettant de tester la classe Lampe
+ * classe de test permettant de tester la classe Telecommande
  */
 public class LampeTest {
 
@@ -20,12 +20,21 @@ public class LampeTest {
 		assertFalse(res, "une nouvelle lampe devrait etre eteinte");
 	}
 
+	public void testCheminee() {
+		// preparation des donnees
+		ChemineeAdapter c=new ChemineeAdapter(new Cheminee());
+
+		//verification
+		boolean rep = c.isAllumee();
+		assertFalse(rep, "une nouvelle cheminee devrait etre eteinte");
+	}
+
 
 	/**
 	 * test allumer une lampe eteinte
 	 */
 	@Test
-	public void testAllumer() {
+	public void testAllumerLampe() {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
 
@@ -34,6 +43,18 @@ public class LampeTest {
 
 		// verification
 		boolean res = l.isAllume();
+		assertTrue(res, "apres allumer, la lampe devrait etre allumee");
+	}
+	@Test
+	public void testAllumerCheminee() {
+		// preparation des donnees
+		ChemineeAdapter l = new ChemineeAdapter(new Cheminee());
+
+		//methode testee
+		l.allumer();
+
+		// verification
+		boolean res = l.isAllumee();
 		assertTrue(res, "apres allumer, la lampe devrait etre allumee");
 	}
 

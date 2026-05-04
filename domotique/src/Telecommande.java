@@ -24,4 +24,8 @@ public class Telecommande {
             i.allumer();
     }
 
+    public int getNombre(){
+        return this.appareils.size();
+    }
+
 }
